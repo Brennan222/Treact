@@ -29,6 +29,11 @@ body {
     padding: 96px 0;
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .purple {
     color: #6415ff;
 }
@@ -67,8 +72,6 @@ a {
     display: inline; 
     text-decoration: none;
 }
-
-
 
 /* 
 
@@ -661,7 +664,6 @@ PRICING â†“
 
 .pricing__title {
     padding-bottom: 16px;
-    
 }
 
 .pricing__para {
@@ -1535,9 +1537,22 @@ MOBILE RESPONSIVENESS â†“
 }
 
 @media(max-width: 640px) {
+    .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .container {
         padding: 80px 0;
     }
+
+    .row,
+    .row__narrow {
+        padding: 0 16px;
+        width: 100%;
+    }
+
     .nav__logo {
         margin: 8px 0;
         padding-bottom: 4px;
@@ -1547,18 +1562,24 @@ MOBILE RESPONSIVENESS â†“
     }
 
     .header__email {
-        position: unset;
-        flex-wrap: wrap;
-        margin-bottom: 40px;
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 
     .header__email--input {
-        position: unset;
+        position: relative;
+        padding: 16px;
+        width: 100%;
     }
 
     .header__email--btn {
-        position: unset;
+        position: relative;
         width: 100%;
+        margin: 16px 0 0 0;
+        height: 48px;
     }
 
     .header__customers--title {
@@ -1573,11 +1594,19 @@ MOBILE RESPONSIVENESS â†“
         font-size: 14px;
     }
 
+    .features__wrapper {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .features__box {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 100%;
+        max-width: 300px;
     }
 
     .features__img--wrapper {
@@ -1662,12 +1691,12 @@ MOBILE RESPONSIVENESS â†“
     }
 
     .footer__links {
-        width: auto;
+        width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 0 16px;
+        padding: 0 8px 32px 8px;
     }
 
     .copyright {
